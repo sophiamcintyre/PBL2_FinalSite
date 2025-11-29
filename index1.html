@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage Wireframe</title>
+    <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .wireframe-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            min-height: 100vh; /* Changed to 100vh for full viewport height */
+        }
+
+        .section-label {
+            background-color: #e9ecef;
+            color: #495057;
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-left: 4px solid #007bff;
+        }
+
+        /* Header */
+        .header {
+            background-color: #ffffff;
+            border-bottom: 2px solid #dee2e6;
+            padding: 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-placeholder {
+            width: 150px;
+            height: 40px;
+            background-color: #e9ecef;
+            border: 2px dashed #adb5bd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #6c757d;
+        }
+
+        /* Navigation */
+        .navigation {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
+            padding: 15px 20px;
+        }
+
+        .nav-items {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-box {
+            width: 120px;
+            height: 40px;
+            background-color: #ffffff;
+            border: 2px dashed #adb5bd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #6c757d;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .nav-box:hover {
+            background-color: #e9ecef;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #f8f9fa;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 800px;
+            height: 300px;
+            background-color: #e9ecef;
+            border: 2px dashed #adb5bd;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #6c757d;
+        }
+
+        .hero-title {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: #212529;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: #6c757d;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Content Blocks */
+        .content-section {
+            padding: 60px 20px;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .content-block {
+            background-color: #ffffff;
+            border: 2px dashed #adb5bd;
+            padding: 30px;
+            text-align: center;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: border-color 0.3s;
+        }
+
+        .content-image {
+            width: 100%;
+            height: 120px;
+            background-color: #e9ecef;
+            border: 2px dashed #adb5bd;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #6c757d;
+        }
+
+        .content-block:hover {
+            border-color: #007bff;
+        }
+
+        .block-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #495057;
+        }
+
+        .block-content {
+            font-size: 14px;
+            color: #6c757d;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 40px 20px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .footer-box {
+            background-color: #495057;
+            border: 2px dashed #6c757d;
+            padding: 15px 10px;
+            text-align: center;
+            min-height: 60px;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #adb5bd;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #495057;
+            color: #adb5bd;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-items {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-title {
+                font-size: 28px;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column; /* Changed to column for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wireframe-container">
+        <div class="section-label">
+            HEADER
+        </div>
+        <header class="header">
+            <div class="header-content">
+                <div class="logo-placeholder" id="site-title">
+                    LOGO / SITE TITLE
+                </div>
+                <div class="logo-placeholder">
+                    SEARCH / UTILITY
+                </div>
+            </div>
+        </header>
+
+        <div class="section-label">
+            NAVIGATION BAR
+        </div>
+        <nav class="navigation">
+            <div class="nav-items">
+                <div class="nav-box">
+                    Lorem
+                </div>
+                <div class="nav-box">
+                    Ipsum
+                </div>
+                <div class="nav-box">
+                    Dolor
+                </div>
+                <div class="nav-box">
+                    Sit Amet
+                </div>
+            </div>
+        </nav>
+
+        <div class="section-label">
+            HERO SECTION
+        </div>
+        <section class="hero">
+            <div class="hero-image">
+                HERO IMAGE PLACEHOLDER
+            </div>
+            <h1 class="hero-title" id="hero-title">Main Headline Goes Here</h1>
+            <p class="hero-subtitle" id="hero-subtitle">Supporting text that describes the main value proposition or key message</p>
+        </section>
+
+        <div class="section-label">
+            CONTENT BLOCKS
+        </div>
+        <section class="content-section">
+            <div class="content-grid">
+                <div class="content-block">
+                    <div class="content-image">
+                        IMAGE PLACEHOLDER
+                    </div>
+                    <div class="block-title">
+                        Lorem Ipsum
+                    </div>
+                    <div class="block-content">
+                        Lorem ipsum dolor sit amet consectetur
+                    </div>
+                </div>
+                <div class="content-block">
+                    <div class="content-image">
+                        IMAGE PLACEHOLDER
+                    </div>
+                    <div class="block-title">
+                        Dolor Sit Amet
+                    </div>
+                    <div class="block-content">
+                        Sed do eiusmod tempor incididunt
+                    </div>
+                </div>
+                <div class="content-block">
+                    <div class="content-image">
+                        IMAGE PLACEHOLDER
+                    </div>
+                    <div class="block-title">
+                        Consectetur
+                    </div>
+                    <div class="block-content">
+                        Ut labore et dolore magna aliqua
+                    </div>
+                </div>
+                <div class="content-block">
+                    <div class="content-image">
+                        IMAGE PLACEHOLDER
+                    </div>
+                    <div class="block-title">
+                        Adipiscing
+                    </div>
+                    <div class="block-content">
+                        Ut enim ad minim veniam quis
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-label">
+            FOOTER
+        </div>
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-box">
+                    Lorem
+                </div>
+                <div class="footer-box">
+                    Ipsum
+                </div>
+                <div class="footer-box">
+                    Dolor
+                </div>
+                <div class="footer-box">
+                    Sit Amet
+                </div>
+                <div class="footer-box">
+                    Consectetur
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2024 Lorem Ipsum. Dolor sit amet.
+            </div>
+        </footer>
+    </div>
+    
+    </body>
+</html>
