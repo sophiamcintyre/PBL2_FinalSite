@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="/_sdk/data_sdk.js"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            min-height: 100%;
+        }
+
+        /* Header */
+        .header {
+            background-color: #ffffff;
+            border-bottom: 2px solid #dee2e6;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: #212529;
+        }
+
+        .page-subtitle {
+            font-size: 16px;
+            color: #6c757d;
+            margin: 0;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 60px 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background-color: #f8f9fa;
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+
+        .form-title {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: #212529;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #495057;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #dee2e6;
+            border-radius: 4px;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            transition: border-color 0.3s;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+
+        .form-textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 15px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+
+        .submit-button:disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+
+        .contact-info-title {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: #212529;
+            text-align: center;
+        }
+
+        .info-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            border-left: 4px solid #007bff;
+        }
+
+        .info-label {
+            font-weight: bold;
+            color: #495057;
+            margin-bottom: 5px;
+        }
+
+        .info-value {
+            color: #6c757d;
+            font-size: 16px;
+        }
+
+        /* Office Hours */
+        .office-hours {
+            background-color: #e9ecef;
+            padding: 20px;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+
+        .hours-title {
+            font-weight: bold;
+            color: #495057;
+            margin-bottom: 10px;
+        }
+
+        .hours-list {
+            color: #6c757d;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* Success Message */
+        .success-message {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            border: 1px solid #c3e6cb;
+            display: none;
+        }
+
+        /* Error Message */
+        .error-message {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            border: 1px solid #f5c6cb;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                padding: 40px 20px;
+                gap: 30px;
+            }
+
+            .contact-form,
+            .contact-info {
+                padding: 30px 20px;
+            }
+
+            .page-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body>
+  <div class="container"><!-- Header -->
+   <header class="header">
+    <h1 class="page-title" id="page-title">Contact Us</h1>
+    <p class="page-subtitle" id="page-subtitle">We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+   </header><!-- Main Content -->
+   <main class="main-content"><!-- Contact Form -->
+    <section class="contact-form">
+     <h2 class="form-title">Lorem Ipsum Message</h2>
+     <div class="success-message" id="success-message">
+      Lorem ipsum! Dolor sit amet consectetur adipiscing elit.
+     </div>
+     <div class="error-message" id="error-message">
+      Lorem ipsum dolor sit amet. Consectetur adipiscing elit.
+     </div>
+     <form id="contact-form">
+      <div class="form-group"><label for="name" class="form-label">Lorem Name</label> <input type="text" id="name" name="name" class="form-input" required>
+      </div>
+      <div class="form-group"><label for="email" class="form-label">Ipsum Email</label> <input type="email" id="email" name="email" class="form-input" required>
+      </div>
+      <div class="form-group"><label for="subject" class="form-label">Dolor Subject</label> <input type="text" id="subject" name="subject" class="form-input" required>
+      </div>
+      <div class="form-group"><label for="message" class="form-label">Sit Amet Message</label> <textarea id="message" name="message" class="form-textarea" required placeholder="Lorem ipsum dolor sit amet..."></textarea>
+      </div><button type="submit" class="submit-button" id="submit-button">Send Lorem</button>
+     </form>
+    </section><!-- Contact Information -->
+    <section class="contact-info">
+     <h2 class="contact-info-title" id="contact-info-title">Lorem Dolor</h2>
+     <div class="info-item">
+      <div class="info-label">
+       Lorem Phone
+      </div>
+      <div class="info-value" id="phone-number">
+       (555) 123-LOREM
+      </div>
+     </div>
+     <div class="info-item">
+      <div class="info-label">
+       Ipsum Email
+      </div>
+      <div class="info-value" id="email-address">
+       lorem@ipsum.com
+      </div>
+     </div>
+     <div class="info-item">
+      <div class="info-label">
+       Dolor Address
+      </div>
+      <div class="info-value" id="office-address">
+       123 Lorem Street<br>
+       Suite 456<br>
+       Ipsum, Dolor 78910
+      </div>
+     </div>
+     <div class="office-hours">
+      <div class="hours-title">
+       Lorem Hours
+      </div>
+      <div class="hours-list">
+       Lorem - Ipsum: 9:00 AM - 6:00 PM<br>
+        Dolor: 10:00 AM - 4:00 PM<br>
+        Sit Amet: Closed
+      </div>
+     </div>
+    </section>
+   </main>
+  </div>
+  <script>
+        let currentRecordCount = 0;
+
+        const defaultConfig = {
+            page_title: "Lorem Ipsum",
+            page_subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            contact_info_title: "Lorem Dolor",
+            phone_number: "(555) 123-LOREM",
+            email_address: "lorem@ipsum.com",
+            office_address: "123 Lorem Street<br>Suite 456<br>Ipsum, Dolor 78910"
+        };
+
+        let config = { ...defaultConfig };
+
+        // Data handler for the Data SDK
+        const dataHandler = {
+            onDataChanged(data) {
+                currentRecordCount = data.length;
+                // Update UI if needed - for contact forms, we typically don't display submitted messages
+                console.log(`Total messages received: ${currentRecordCount}`);
+            }
+        };
+
+        async function onConfigChange(newConfig) {
+            config = { ...config, ...newConfig };
+            
+            // Update page title
+            const pageTitleElement = document.getElementById('page-title');
+            if (pageTitleElement) {
+                pageTitleElement.textContent = config.page_title || defaultConfig.page_title;
+            }
+            
+            // Update page subtitle
+            const pageSubtitleElement = document.getElementById('page-subtitle');
+            if (pageSubtitleElement) {
+                pageSubtitleElement.textContent = config.page_subtitle || defaultConfig.page_subtitle;
+            }
+            
+            // Update contact info title
+            const contactInfoTitleElement = document.getElementById('contact-info-title');
+            if (contactInfoTitleElement) {
+                contactInfoTitleElement.textContent = config.contact_info_title || defaultConfig.contact_info_title;
+            }
+            
+            // Update phone number
+            const phoneNumberElement = document.getElementById('phone-number');
+            if (phoneNumberElement) {
+                phoneNumberElement.textContent = config.phone_number || defaultConfig.phone_number;
+            }
+            
+            // Update email address
+            const emailAddressElement = document.getElementById('email-address');
+            if (emailAddressElement) {
+                emailAddressElement.textContent = config.email_address || defaultConfig.email_address;
+            }
+            
+            // Update office address
+            const officeAddressElement = document.getElementById('office-address');
+            if (officeAddressElement) {
+                officeAddressElement.innerHTML = config.office_address || defaultConfig.office_address;
+            }
+        }
+
+        function mapToCapabilities(config) {
+            return {
+                recolorables: [],
+                borderables: [],
+                fontEditable: undefined,
+                fontSizeable: undefined
+            };
+        }
+
+        function mapToEditPanelValues(config) {
+            return new Map([
+                ["page_title", config.page_title || defaultConfig.page_title],
+                ["page_subtitle", config.page_subtitle || defaultConfig.page_subtitle],
+                ["contact_info_title", config.contact_info_title || defaultConfig.contact_info_title],
+                ["phone_number", config.phone_number || defaultConfig.phone_number],
+                ["email_address", config.email_address || defaultConfig.email_address],
+                ["office_address", config.office_address || defaultConfig.office_address]
+            ]);
+        }
+
+        // Form submission handler
+        document.getElementById('contact-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Check record limit
+            if (currentRecordCount >= 999) {
+                showError("Lorem ipsum dolor sit amet. Consectetur adipiscing elit sed do.");
+                return;
+            }
+            
+            const submitButton = document.getElementById('submit-button');
+            const originalText = submitButton.textContent;
+            
+            // Show loading state
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+            
+            // Hide previous messages
+            hideMessages();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const messageData = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                subject: formData.get('subject'),
+                message: formData.get('message'),
+                submitted_at: new Date().toISOString()
+            };
+            
+            try {
+                // Save to Data SDK
+                const result = await window.dataSdk.create(messageData);
+                
+                if (result.isOk) {
+                    showSuccess();
+                    this.reset(); // Clear the form
+                } else {
+                    showError("Lorem ipsum dolor sit amet. Consectetur adipiscing elit.");
+                }
+            } catch (error) {
+                showError("Lorem ipsum dolor sit amet. Consectetur adipiscing elit.");
+            } finally {
+                // Reset button state
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+            }
+        });
+
+        function showSuccess() {
+            const successMessage = document.getElementById('success-message');
+            successMessage.style.display = 'block';
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 5000);
+        }
+
+        function showError(message) {
+            const errorMessage = document.getElementById('error-message');
+            errorMessage.textContent = message;
+            errorMessage.style.display = 'block';
+            setTimeout(() => {
+                errorMessage.style.display = 'none';
+            }, 5000);
+        }
+
+        function hideMessages() {
+            document.getElementById('success-message').style.display = 'none';
+            document.getElementById('error-message').style.display = 'none';
+        }
+
+        // Initialize SDKs
+        async function initializeApp() {
+            // Initialize Data SDK
+            if (window.dataSdk) {
+                const initResult = await window.dataSdk.init(dataHandler);
+                if (!initResult.isOk) {
+                    console.error("Failed to initialize data SDK");
+                }
+            }
+
+            // Initialize Element SDK
+            if (window.elementSdk) {
+                window.elementSdk.init({
+                    defaultConfig,
+                    onConfigChange,
+                    mapToCapabilities,
+                    mapToEditPanelValues
+                });
+            }
+        }
+
+        // Initialize when page loads
+        initializeApp();
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a64078337f8cef7',t:'MTc2NDQzOTQ4Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
